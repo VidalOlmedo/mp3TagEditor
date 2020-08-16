@@ -1,0 +1,11 @@
+C:\Users\Vidal Olmedo\Music\mp3TagEditor\mp3TagEditor\bin\Debug\mp3TagEditor.exe.config
+C:\Users\Vidal Olmedo\Music\mp3TagEditor\mp3TagEditor\bin\Debug\mp3TagEditor.exe
+C:\Users\Vidal Olmedo\Music\mp3TagEditor\mp3TagEditor\bin\Debug\mp3TagEditor.pdb
+C:\Users\Vidal Olmedo\Music\mp3TagEditor\mp3TagEditor\obj\Debug\mp3TagEditor.csprojAssemblyReference.cache
+C:\Users\Vidal Olmedo\Music\mp3TagEditor\mp3TagEditor\obj\Debug\mp3TagEditor.csproj.CoreCompileInputs.cache
+C:\Users\Vidal Olmedo\Music\mp3TagEditor\mp3TagEditor\obj\Debug\mp3TagEditor.exe
+C:\Users\Vidal Olmedo\Music\mp3TagEditor\mp3TagEditor\obj\Debug\mp3TagEditor.pdb
+C:\Users\Vidal Olmedo\Music\mp3TagEditor\mp3TagEditor\bin\Debug\TagLibSharp.dll
+C:\Users\Vidal Olmedo\Music\mp3TagEditor\mp3TagEditor\bin\Debug\TagLibSharp.pdb
+C:\Users\Vidal Olmedo\Music\mp3TagEditor\mp3TagEditor\bin\Debug\TagLibSharp.xml
+C:\Users\Vidal Olmedo\Music\mp3TagEditor\mp3TagEditor\obj\Debug\mp3TagEditor.csproj.CopyComplete
