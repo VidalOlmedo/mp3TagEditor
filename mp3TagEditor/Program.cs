@@ -21,7 +21,7 @@ namespace mp3TagEditor
             string[] files = Directory.GetFiles(paths[0]);
             int pathLength = paths[0].Length + 1; //+1 for the ending slash
 
-            string fileName, newName, performer, newPerformer;
+            string fileName, newName, performer, newPerformer, extension;
             int extensionIndex;
 
             TagLib.File file;
@@ -32,6 +32,13 @@ namespace mp3TagEditor
 
                 fileName = files[i].Substring(pathLength);
                 extensionIndex = fileName.LastIndexOf(".");
+                extension = fileName.Substring(extensionIndex + 1);
+
+                if(extension != "mp3")
+                {
+                    continue;
+                }
+
                 fileName = fileName.Remove(extensionIndex);
 
                 file = TagLib.File.Create(files[i]);
