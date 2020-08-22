@@ -14,8 +14,11 @@ namespace mp3TagEditor
             if(paths.Length == 0)
             {
                 paths = new string[2];
-                paths[0] = "C:/Users/Vidal Olmedo/Music/Music"; //source
-                paths[1] = "C:/Users/Vidal Olmedo/Music/MUSIC LISTOS";  //destination
+                /*paths[0] = "C:/Users/Vidal Olmedo/Music/Music"; //source
+                paths[1] = "C:/Users/Vidal Olmedo/Music/MUSIC LISTOS";  //destination*/
+
+                paths[0] = "C:/Users/Vidal Olmedo/Music/Chidas nuevas"; //source
+                paths[1] = "C:/Users/Vidal Olmedo/Music/NUEVAS LISTOS";  //destination
             }
 
             string[] files = Directory.GetFiles(paths[0]);
