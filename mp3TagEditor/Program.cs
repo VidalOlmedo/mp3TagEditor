@@ -6,12 +6,55 @@ namespace mp3TagEditor
 {
     class Program
     {
-        static void Main(string[] paths)
+        static void Main(string[] args)
         {
-            //args[0] = source folder (as copied from the route in the file explorer)
-            //args[1] = destination folder
+            //RemoveAlbumArtist();
+            EditFiles(args);
+        }
 
-            if(paths.Length == 0)
+        private static void RemoveAlbumArtist()
+        {
+            string path = "C:/Users/Vidal Olmedo/Music/Chidas nuevas (listas)";
+
+            string[] files = Directory.GetFiles(path);
+
+            TagLib.File file;
+
+            int count = 0;
+
+            for(int i = 0; i < files.Length; i++)
+            {
+                file = TagLib.File.Create(files[i]);
+                //Console.WriteLine($"{file.Tag.AlbumArtists[0]}");
+
+                if(file.Tag.AlbumArtists.Length > 0)
+                {
+                    file.Tag.AlbumArtists = new string[0];
+                }
+
+                if(file.Tag.Title != "")
+                {
+                    file.Tag.Title = "";
+                }
+
+                if(file.Tag.AlbumArtists.Length > 1)
+                {
+                    count++;
+                }
+
+                file.Save();
+            }
+
+            Console.WriteLine($"COUNT: {count}");
+            Console.ReadLine(); //Pause
+        }
+
+        private static void EditFiles(string[] paths)
+        {
+            //paths[0] = source folder (as copied from the route in the file explorer)
+            //paths[1] = destination folder
+
+            if (paths.Length == 0)
             {
                 paths = new string[2];
                 /*paths[0] = "C:/Users/Vidal Olmedo/Music/Music"; //source
@@ -29,7 +72,7 @@ namespace mp3TagEditor
 
             TagLib.File file;
 
-            for(int i = 0; i < files.Length; i++)
+            for (int i = 0; i < files.Length; i++)
             {
                 Console.Clear();
 
@@ -37,7 +80,7 @@ namespace mp3TagEditor
                 extensionIndex = fileName.LastIndexOf(".");
                 extension = fileName.Substring(extensionIndex + 1);
 
-                if(extension != "mp3")
+                if (extension != "mp3")
                 {
                     continue;
                 }
@@ -47,7 +90,7 @@ namespace mp3TagEditor
                 file = TagLib.File.Create(files[i]);
 
 
-                if(file.Tag.Performers.Length == 0)
+                if (file.Tag.Performers.Length == 0)
                 {
                     performer = "-";
                 }
@@ -61,11 +104,11 @@ namespace mp3TagEditor
                 Console.Write("Nombre: ");
                 newName = Console.ReadLine();
 
-                if(newName == ".")
+                if (newName == ".")
                 {
                     continue;
                 }
-                else if(newName == "")
+                else if (newName == "")
                 {
                     newName = fileName;
                 }
@@ -73,7 +116,7 @@ namespace mp3TagEditor
                 Console.Write("Artista: ");
                 GetPerformer();
 
-                if(newPerformer == ".")
+                if (newPerformer == ".")
                 {
                     continue;
                 }
@@ -91,7 +134,7 @@ namespace mp3TagEditor
             Console.WriteLine("No hay mas archivos");
 
             void GetPerformer()
-            {                
+            {
                 newPerformer = Console.ReadLine();
 
                 if (newPerformer == "")
@@ -103,7 +146,7 @@ namespace mp3TagEditor
                     else
                     {
                         newPerformer = performer;
-                    }                 
+                    }
                 }
             }
         }
