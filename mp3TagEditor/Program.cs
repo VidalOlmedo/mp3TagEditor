@@ -1,5 +1,5 @@
 ﻿using System;
-//using TagLib;
+//using TagLib; https://github.com/mono/taglib-sharp
 using System.IO;
 
 namespace mp3TagEditor
@@ -17,8 +17,8 @@ namespace mp3TagEditor
                 /*paths[0] = "C:/Users/Vidal Olmedo/Music/Music"; //source
                 paths[1] = "C:/Users/Vidal Olmedo/Music/MUSIC LISTOS";  //destination*/
 
-                paths[0] = "C:/Users/Vidal Olmedo/Music/Chidas nuevas"; //source
-                paths[1] = "C:/Users/Vidal Olmedo/Music/NUEVAS LISTOS";  //destination
+                paths[0] = "C:/Users/Vidal Olmedo/Music/Chidas nuevas (descargadas)"; //source
+                paths[1] = "C:/Users/Vidal Olmedo/Music/Chidas nuevas (listas)";  //destination
             }
 
             string[] files = Directory.GetFiles(paths[0]);
@@ -61,13 +61,22 @@ namespace mp3TagEditor
                 Console.Write("Nombre: ");
                 newName = Console.ReadLine();
 
-                if(newName == "")
+                if(newName == ".")
+                {
+                    continue;
+                }
+                else if(newName == "")
                 {
                     newName = fileName;
                 }
 
                 Console.Write("Artista: ");
                 GetPerformer();
+
+                if(newPerformer == ".")
+                {
+                    continue;
+                }
 
                 string[] performersArray = { newPerformer };
 
